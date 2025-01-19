@@ -1,0 +1,18 @@
+services:
+  zookeeper-ch:
+    image: zookeeper:latest
+    container_name: zookeeper-ch
+    hostname: zookeeper-ch
+
+  clickhouse-node1:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse-node1
+    hostname: clickhouse-node1
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - ./data/clickhouse/node1:/etc/clickhouse-server
+      - ./data/clickhouse:/docker-entrypoint-initdb.d
+    depends_on:
+      - zookeeper-ch

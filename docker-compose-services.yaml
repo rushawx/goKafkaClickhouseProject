@@ -1,9 +1,9 @@
 services:
-  serviceOne:
+  service-one:
     build: serviceOne
     ports:
       - "8000:8000"
-  serviceTwo:
-    build: serviceTwo
-    ports:
-      - "8080:8080"
+#  service-two:
+#    build: serviceTwo
+#    ports:
+#      - "8080:8080"
