@@ -30,7 +30,7 @@ func main() {
 
 	router := gin.Default()
 
-	stats.NewStatsHandler(router, stats.StatsHandlerDeps{Config: Config})
+	stats.NewStatsHandler(router, stats.HandlerDeps{Config: Config})
 
 	if err := router.Run(":8080"); err != nil {
 		log.Fatalf("Failed to run server: %v\n", err)
