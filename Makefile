@@ -3,6 +3,7 @@
 up:
 	docker compose -f docker-compose-kafka.yaml up -d --build && \
 	docker compose -f docker-compose-clickhouse.yaml up -d --build && \
+	sleep 5 && \
 	docker compose -f docker-compose-services.yaml up -d --build
 
 up-services:
